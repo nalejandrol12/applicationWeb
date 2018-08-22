@@ -1,0 +1,12 @@
+.card{
+    width: 500px;
+}
+img{
+    width: 40%;
+    border: 3px solid #dc3545;
+    border-radius: 50%;
+}
+.div_image{
+    text-align: center;
+    padding: 10px;
+}

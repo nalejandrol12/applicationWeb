@@ -9,12 +9,14 @@ import { SingInComponent } from './sing-in/sing-in.component';
 import { RegistroComponent } from './registro/registro.component';
 
 import { RoutesModule } from './routes/routes.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SingInComponent,
-    RegistroComponent
+    RegistroComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
