@@ -9,7 +9,7 @@
       <img class="card-img-top" src="/assets/img/icon_login.png" alt="Card image cap">
     </div>
     <div class="card-body">
-      <h3 class="card-title">Iniciar sesion</h3>
+      <h3 class="card-title">Iniciar sesión</h3>
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Direccion de correo electronico</label>
@@ -19,12 +19,15 @@
           <label for="exampleInputPassword1">Contraseña</label>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">No cerrar sesion</label>
+        <div class="button_login">
+          <button type="submit" class="btn btn-primary">Login</button>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <div class="div_register">
+        <p class="p_register">¿No tienes una cuenta? Regístrate
+          <a href="#" routerLink='/signup' routerLinkActive='active'>aquí</a>
+        </p>
+      </div>
     </div>
   </div>
 </div>

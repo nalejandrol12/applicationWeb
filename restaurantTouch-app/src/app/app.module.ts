@@ -5,18 +5,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { SingInComponent } from './sing-in/sing-in.component';
-import { RegistroComponent } from './registro/registro.component';
 
 import { RoutesModule } from './routes/routes.module';
 import { FooterComponent } from './footer/footer.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SingInComponent,
-    RegistroComponent,
-    FooterComponent
+    FooterComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
