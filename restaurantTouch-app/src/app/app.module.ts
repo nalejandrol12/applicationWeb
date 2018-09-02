@@ -10,13 +10,15 @@ import { RoutesModule } from './routes/routes.module';
 import { FooterComponent } from './footer/footer.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

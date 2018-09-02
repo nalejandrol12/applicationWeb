@@ -1,0 +1,28 @@
+.card{
+    width: 500px;
+}
+img{
+    width: 30%;
+}
+.div_image{
+    text-align: center;
+    padding: 10px;
+}
+.button_register{
+    text-align: center;
+}
+.btn{
+    width: 30%;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.p_login{
+    margin-top: 20px;
+}
+.div_login{
+    text-align: center;
+}
+.p_space{
+    margin-top: -5px;
+    font-size: 30px;
+}
