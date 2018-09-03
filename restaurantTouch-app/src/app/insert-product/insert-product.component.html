@@ -1,0 +1,74 @@
+<app-nav></app-nav>
+
+<section class="content-header">
+  <h1><i class="fa fa-edit"></i> Agregar nuevo producto</h1>
+</section>
+
+<div class="form-row">
+  <div class="col-3 div_image">
+    <div class="card">
+      <div class="card-body">
+        <img src="/assets/img/imagen_amigo.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="col div_form">
+    <div class="card">
+      <div class="card-body">
+        <div class="content">
+          <form action="">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputName">Nombre</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputCategory">Categoría</label>
+                <select id="inputCategory" class="form-control">
+                  <option selected>Choose...</option>
+                  <option value="TIPICO">TIPICO</option>
+                  <option value="COMBOS">COMBOS</option>
+                  <option value="BEBIDAS">BEBIDAS</option>
+                  <option value="BEBIDAS ALCOHOLICAS">BEBIDAS ALCOHOLICAS</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label>Descripción</label>
+                <textarea class="form-control" placeholder="Descripción del producto"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStock">Stock</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Stock" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPrice">Precio</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Precio" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="inputBebida">Bebidas</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Ejemplo: Coca-cola, Postobon-manzana, etc." required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="exampleFormControlFile1">Subir logo</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+            </div>
+            <div class="button_register">
+              <button type="submit" class="btn btn-primary" routerLink='/newProduct' routerLinkActive='active'>Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

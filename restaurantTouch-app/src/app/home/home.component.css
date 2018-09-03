@@ -1,0 +1,21 @@
+img{
+    width: 20%;
+    border-radius: 3px;
+}
+a{
+    display: block;
+    color: #333;
+}
+.a_delete{
+    color: crimson !important;
+}
+.content-size{
+    padding: 20px 100px 20px 100px;
+}
+.container{
+    margin: 0%;
+    padding: 30px 100px 10px 100px;
+}
+.pull-right{
+    text-align: center;
+}

@@ -11,6 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
+import { InsertProductComponent } from './insert-product/insert-product.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HeaderComponent } from './header/header.component';
     FooterComponent,
     SignUpComponent,
     SignInComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    NavComponent,
+    InsertProductComponent
   ],
   imports: [
     BrowserModule,
