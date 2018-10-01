@@ -1,5 +1,12 @@
 .card{
-    width: 500px;
+    width: 550px;
+    -webkit-box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.36);
+    -moz-box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.36);
+    box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.36);
+}
+.title-div{
+    text-align: center;
+    margin-block-end: 30px;
 }
 img{
     width: 30%;

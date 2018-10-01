@@ -18,6 +18,7 @@ import { DataService } from './services/data.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 
 import { AuthGuard } from './auth/auth.guard';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthGuard } from './auth/auth.guard';
     HeaderComponent,
     HomeComponent,
     NavComponent,
-    InsertProductComponent
+    InsertProductComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
