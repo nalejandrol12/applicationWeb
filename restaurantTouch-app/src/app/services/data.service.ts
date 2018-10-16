@@ -5,10 +5,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private _registerUrl = "http://localhost:3001/api/signupadmin";
-  private _loginUrl = "http://localhost:3001/api/signinadmin";
-  private _homeadminUrl = "http://localhost:3001/api/private";
-  private _menuUrl = "http://localhost:3001/api/product/";
+  private _registerUrl = "https://app-restaurante.herokuapp.com/api/signupadmin";
+  private _loginUrl = "https://app-restaurante.herokuapp.com/api/signinadmin";
+  private _homeadminUrl = "https://app-restaurante.herokuapp.com/api/private";
+  private _menuUrl = "https://app-restaurante.herokuapp.com/api/product/";
 
   constructor(private http: HttpClient) { }
 

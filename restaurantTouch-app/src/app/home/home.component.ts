@@ -39,4 +39,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  onView(item){
+
+  }
+
 }
