@@ -6,10 +6,12 @@
   </div>
 
   <div id="accordion">
-    <div class="card">
+    <div class="card" *ngFor="let item of listOrder">
       <div class="card-header" id="headingOne">
         <div class="row">
-          <div class="col"></div>
+          <div class="col">
+            <p class="name">{{item.idUser[0].nameUser}}</p>
+          </div>
           <div class="col"></div>
           <div class="col-2">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -19,14 +21,39 @@
         </div>
       </div>
 
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-          labore sustainable VHS.
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body" *ngFor="let item2 of item.idUser">
+          <div class="row">
+            <div class="col-md-3 card container-img">
+              <img src="https://app-restaurante.herokuapp.com/api/images/{{item2.image}}">
+            </div>
+            <div class="col-md card container-inf">
+              <h2>Nombre</h2>
+              <p>{{item2.name}}</p>
+              <h2>Notas</h2>
+              <p>{{item2.notes}}</p>
+              <h2 *ngIf="item2.drink != null">Bebida</h2>
+              <p *ngIf="item2.drink != null">{{item2.drink}}</p>
+              <h2>Precio:</h2>
+              <p>{{item2.price}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-more">
+          <div class="row">
+            <div class="col-9">
+
+            </div>
+            <div class="col container-btn">
+              <div class="btn1">
+                <button type="button" class="btn btn-primary" (click)="sendEmail(item.idUser[0].id_local,item.idUser[0].id_user,0);">Aceptar</button>
+              </div>
+              <div class="btn1">
+                <button type="button" class="btn btn-danger" (click)="sendEmail(item.idUser[0].id_local,item.idUser[0].id_user,1);">Rechazar</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
