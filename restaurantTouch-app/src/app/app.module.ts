@@ -3,6 +3,11 @@ import { NgModule, NO_ERRORS_SCHEMA  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 
 import { RoutesModule } from './routes/routes.module';
@@ -19,6 +24,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 
 import { AuthGuard } from './auth/auth.guard';
 import { OrderComponent } from './order/order.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +36,17 @@ import { OrderComponent } from './order/order.component';
     HomeComponent,
     NavComponent,
     InsertProductComponent,
-    OrderComponent
+    OrderComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     RoutesModule,
     FormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [DataService, 

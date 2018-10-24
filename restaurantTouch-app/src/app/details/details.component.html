@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+
+<div class="card card-container">
+  <h5 class="card-header">Información</h5>
+  <div class="card-body">
+    <div class="container-information">
+      <h5 class="card-title">{{details.name}}</h5>
+      <p class="card-text">{{details.description}}</p>
+      <p class="card-text">Categoría: {{details.category}}</p>
+      <button class="btn btn-primary" (click)="onBack();">Regresar</button>
+    </div>
+    <div class="container-img">
+      <img src="https://app-restaurante.herokuapp.com/api/images/{{details.image}}">
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

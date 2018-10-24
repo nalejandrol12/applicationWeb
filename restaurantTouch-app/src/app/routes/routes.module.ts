@@ -6,6 +6,7 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { HomeComponent } from '../home/home.component';
 import { InsertProductComponent } from '../insert-product/insert-product.component';
 import { OrderComponent } from '../order/order.component';
+import { DetailsComponent } from '../details/details.component';
 
 const routes: Routes = [
   
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'order',
     component: OrderComponent
+  },
+  {
+    path: 'details',
+    component: DetailsComponent
   }
 
 ];
