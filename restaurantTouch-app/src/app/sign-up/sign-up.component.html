@@ -9,67 +9,67 @@
       <div class="title-div">
         <h3 class="card-title">Registro</h3>
       </div>
-      <form>
+      <form (ngSubmit)="onSubmit(localForm);" #localForm="ngForm">
         <div class="form-group">
           <label for="exampleInputName">Nombre</label>
-          <input type="text" class="form-control" id="exampleInputName" placeholder="Nombre del restaurante">
+          <input type="text" class="form-control" #name maxlength="80" [(ngModel)]="LocalModel.name" name="Name" placeholder="Nombre del restaurante">
         </div>
         <div class="row">
           <div class="form-group col">
             <label for="exampleInputEmail1">Dirección de correo electrónico</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el correo">
+            <input type="email" class="form-control" [(ngModel)]="LocalModel.email" name="Email" aria-describedby="emailHelp" placeholder="Ingrese el correo">
           </div>
           <div class="form-group col">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese la Contraseña">
+            <input type="password" class="form-control" #password maxlength="80" [(ngModel)]="LocalModel.password" name="Password" placeholder="Ingrese la Contraseña">
           </div>
         </div>
         <div class="row">
           <div class="form-group col">
             <label for="exampleInputPassword1">Teléfono</label>
-            <input type="number" class="form-control" id="exampleInputPhone" placeholder="Ingrese el teléfono del retaurante">
+            <input type="number" class="form-control" #tel [(ngModel)]="LocalModel.phone" name="Phone" maxlength="16" placeholder="Ingrese el teléfono del retaurante">
           </div>
           <div class="form-group col">
             <label for="exampleInputPassword1">Dirección</label>
-            <input type="text" class="form-control" id="exampleInputAddress" placeholder="Ingrese la dirección del retaurante">
+            <input type="text" class="form-control" #addresss maxlength="80" [(ngModel)]="LocalModel.address" name="Address" placeholder="Ingrese la dirección del retaurante">
           </div>
         </div>
         <label for="inputState">Horario de atención</label>
         <div class="form-row">
           <div class="form-group col-md-3">
-            <input type="text" class="form-control" id="exampleInputInicial" placeholder="Hora Inicio">
+            <input type="text" class="form-control" #scheduleIni maxlength="5" [(ngModel)]="LocalModel.horaInicial" name="ScheduleIni" placeholder="Hora Inicio">
           </div>
           <div class="form-group col-md-2">
-            <select class="custom-select" required>
+            <select class="custom-select" #horIni [(ngModel)]="LocalModel.horarioInicial" name="HorarioInicial" required>
               <option selected>Choose...</option>
-              <option>AM</option>
-              <option>PM</option>
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
             </select>
             <div class="invalid-feedback">Example invalid custom select feedback</div>
           </div>
           <p class="p_space">-</p>
           <div class="form-group col-md-3">
-            <input type="text" class="form-control" id="exampleInputFinal" placeholder="Hora Final" required>
+            <input type="text" class="form-control" #scheduleFin maxlength="5" [(ngModel)]="LocalModel.horaFinal" name="ScheduleFin" placeholder="Hora Final" required>
           </div>
           <div class="form-group col-md-2">
-            <select class="custom-select" required>
+            <select class="custom-select" #horFin [(ngModel)]="LocalModel.horarioFinal" name="HorarioFinal" required>
               <option selected>Choose...</option>
-              <option>AM</option>
-              <option>PM</option>
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
             </select>
             <div class="invalid-feedback">Example invalid custom select feedback</div>
           </div>
         </div>
         <div class="form-group">
           <label>Descripción</label>
-          <textarea class="form-control" placeholder="Por ejemplo: mi restaurante o local es de comidas rápidas"></textarea>
+          <textarea class="form-control" #description maxlength="100" [(ngModel)]="LocalModel.description" name="Description" placeholder="Por ejemplo: mi restaurante o local es de comidas rápidas"></textarea>
         </div>
         <div class="form-group">
           <label for="exampleFormControlFile1">Subir logo</label>
           <input type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <div class="button_register">
-          <button type="submit" class="btn btn-primary" routerLink='/home' routerLinkActive='active'>Registrar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!localForm.form.valid">Registrar</button>
         </div>
       </form>
       <div class="div_login">
