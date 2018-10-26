@@ -16,6 +16,7 @@ export class DataService {
   private _sendImageUrl = "https://app-restaurante.herokuapp.com/api/saveImage";
   private _deleteImageUrl = "https://app-restaurante.herokuapp.com/api/deleteImage";
   private _createMenuUrl = "https://app-restaurante.herokuapp.com/api/createMenu";
+  private _deleteMenuUrl = 'https://app-restaurante.herokuapp.com/api/deleteMenu';
 
   constructor(private http: HttpClient) { }
 
@@ -36,6 +37,11 @@ export class DataService {
 
   getMenu() {
     return this.http.get<any>(this._menuUrl + sessionStorage.getItem('id'));
+  }
+
+  deleteMenu(course: string, course2: string) {
+    const data = { id: course, image: course2 };
+    return this.http.post<any>(this._deleteMenuUrl, data);
   }
 
   addCourses(course: string, course1: string, course2: string, course3: string) {

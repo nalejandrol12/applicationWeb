@@ -40,7 +40,7 @@
         <td class="text-center">{{item.category}}</td>
         <td class="text-center"><a (click)="onView(item)"><i class="far fa-eye"></i></a></td>
         <td class="text-center"><a href=""><i class="fas fa-edit"></i></a></td>
-        <td class="text-center"><a href="" class="a_delete"><i class="fas fa-minus-circle"></i></a></td>
+        <td class="text-center"><a (click)="onDelete(item)" class="a_delete"><i class="fas fa-minus-circle"></i></a></td>
       </tr>
     </tbody>
   </table>

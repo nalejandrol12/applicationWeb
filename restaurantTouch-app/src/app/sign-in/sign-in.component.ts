@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +13,7 @@ export class SignInComponent implements OnInit {
   private password: string;
 
   constructor(private _router: Router,
-    private _dataService: DataService) { }
+    private _dataService: DataService, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -22,8 +23,13 @@ export class SignInComponent implements OnInit {
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('id', res.id);
       sessionStorage.setItem('image', res.image);
+      console.log(res.status);
       this._router.navigate(['/home']);
-    },
-      err => console.log(err));
+    }, err => {
+      this.toastr.error('Algunos de los datos ingresados es incorrecto', 'Error', {
+        timeOut: 3000
+      });
+    }
+    );
   }
 }

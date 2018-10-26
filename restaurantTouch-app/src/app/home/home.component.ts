@@ -52,4 +52,16 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  onDelete(details){
+    this._dataService.deleteMenu(details._id,details.image).subscribe(res => {
+      this.toastr.success(res.message, 'Se elimino con éxito', {
+        timeOut: 3000
+      });
+    }, err => {
+      this.toastr.error(err, 'Ocurrio un error y no se pudo eliminar', {
+        timeOut: 3000
+      });
+    });
+  }
+
 }
