@@ -8,7 +8,7 @@
   <div class="col-3 div_image">
     <div class="card">
       <div class="card-body">
-        <img src="/assets/img/imagen_amigo.jpg" alt="">
+        <img src="https://app-restaurante.herokuapp.com/api/images/{{direc}}" alt="">
       </div>
     </div>
   </div>
@@ -16,15 +16,15 @@
     <div class="card">
       <div class="card-body">
         <div class="content">
-          <form action="">
+          <form (ngSubmit)="onSubmit(productForm);" #productForm="ngForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputName">Nombre</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre" required>
+                <input type="text" class="form-control" #name maxlength="80" [(ngModel)]="ProductModel.name" name="Name" placeholder="Nombre" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputCategory">Categoría</label>
-                <select id="inputCategory" class="form-control">
+                <select id="inputCategory" #category [(ngModel)]="ProductModel.category" name="Category" class="form-control">
                   <option selected>Choose...</option>
                   <option value="TIPICO">TIPICO</option>
                   <option value="COMBOS">COMBOS</option>
@@ -36,29 +36,29 @@
             <div class="form-row">
               <div class="form-group col">
                 <label>Descripción</label>
-                <textarea class="form-control" placeholder="Descripción del producto"></textarea>
+                <textarea class="form-control" #description maxlength="80" [(ngModel)]="ProductModel.description" name="Description" placeholder="Descripción del producto"></textarea>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputStock">Stock</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Stock" required>
+                <input type="text" class="form-control" #quantity [(ngModel)]="ProductModel.quantity" name="Quantity" placeholder="Stock" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPrice">Precio</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Precio" required>
+                <input type="text" class="form-control" #price [(ngModel)]="ProductModel.price" name="Price" placeholder="Precio" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col">
                 <label for="inputBebida">Bebidas</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Ejemplo: Coca-cola, Postobon-manzana, etc." required>
+                <input type="text" class="form-control" #drink [(ngModel)]="ProductModel.drink" name="Drink" placeholder="Ejemplo: Coca-cola, Postobon-manzana, etc." required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="exampleFormControlFile1">Subir logo</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file" (change)="cargandoImagen($event.target.files)" multiple>
               </div>
             </div>
             <div class="button_register">

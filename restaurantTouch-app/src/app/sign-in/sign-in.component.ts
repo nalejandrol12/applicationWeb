@@ -21,7 +21,7 @@ export class SignInComponent implements OnInit {
     this._dataService.addLogin(this.email, this.password).subscribe(res => {
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('id', res.id);
-      //localStorage.setItem('token', res.token)
+      sessionStorage.setItem('image', res.image);
       this._router.navigate(['/home']);
     },
       err => console.log(err));
