@@ -62,7 +62,7 @@
               </div>
             </div>
             <div class="button_register">
-              <button type="submit" class="btn btn-primary" routerLink='/newProduct' routerLinkActive='active'>Registrar</button>
+              <button type="submit" class="btn btn-primary" [disabled]="!productForm.form.valid">Registrar</button>
             </div>
           </form>
         </div>

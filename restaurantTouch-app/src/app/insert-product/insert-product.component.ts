@@ -4,6 +4,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductForm } from '../models/product';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-insert-product',
@@ -18,7 +19,7 @@ export class InsertProductComponent implements OnInit {
   public resultadoCarga;
 
   constructor(private _dataService: DataService,
-    private _router: Router) { }
+    private _router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this._dataService.getHome().subscribe(
@@ -31,6 +32,28 @@ export class InsertProductComponent implements OnInit {
         }
       }
     )
+  }
+
+  onSubmit(f: NgForm) {
+    this.getSentServices(this.ProductModel, f);
+  }
+
+  getSentServices(body: ProductForm, f: NgForm) {
+    var image = "";
+    if (typeof sessionStorage.directionImage !== 'undefined') {
+      image = sessionStorage.directionImage;
+    }
+    this._dataService.addMenu(body, image, sessionStorage.id).subscribe(res => {
+      this.toastr.success('Se guardo el producto con éxito', 'Elemento guardado', {
+        timeOut: 3000
+      });
+      if (typeof sessionStorage.directionImage !== 'undefined') {
+        sessionStorage.removeItem('directionImage');
+      }
+      this._router.navigate(['/home']);
+    }, err => {
+      console.log(err);
+    })
   }
 
   public cargandoImagen(files: FileList) {

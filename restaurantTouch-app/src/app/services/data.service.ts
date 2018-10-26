@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LocalForm } from '../models/local';
+import { ProductForm } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private _registerUrl = "http://localhost:3001/api/signupadmin";
+  private _registerUrl = "https://app-restaurante.herokuapp.com/api/signupadmin";
   private _loginUrl = "https://app-restaurante.herokuapp.com/api/signinadmin";
   private _homeadminUrl = "https://app-restaurante.herokuapp.com/api/private";
   private _menuUrl = "https://app-restaurante.herokuapp.com/api/product/";
   private _orderUrl = "https://app-restaurante.herokuapp.com/api/showOrder";
   private _emailUrl = "https://app-restaurante.herokuapp.com/api/email";
-  private _sendImageUrl = "http://localhost:3001/api/saveImage";
-  private _deleteImageUrl = "http://localhost:3001/api/deleteImage";
+  private _sendImageUrl = "https://app-restaurante.herokuapp.com/api/saveImage";
+  private _deleteImageUrl = "https://app-restaurante.herokuapp.com/api/deleteImage";
+  private _createMenuUrl = "https://app-restaurante.herokuapp.com/api/createMenu";
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +27,11 @@ export class DataService {
   addUser(_body: LocalForm, course: string) {
     const data = { _body: _body, image: course };
     return this.http.post<any>(this._registerUrl, data);
+  }
+
+  addMenu(_body: ProductForm, course: string, course2: String) {
+    const data = { _body: _body, image: course, id_local: course2 };
+    return this.http.post<any>(this._createMenuUrl, data);
   }
 
   getMenu() {
